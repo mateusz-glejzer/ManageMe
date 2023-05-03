@@ -1,0 +1,8 @@
+<div class="board">
+    <div class="project newProject">
+        <p id="newProjectTitle">
+            Create a new project
+        </p>
+    </div>
+    <app-project-tile class="project" *ngFor="let project of projects" [data]="project"></app-project-tile>
+</div>

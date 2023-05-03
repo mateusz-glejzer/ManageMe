@@ -1,0 +1,9 @@
+
+<form [formGroup]="projectsForm" (ngSubmit)="onSubmit()">
+    <select formControlName="name">
+      <option disabled>Select project</option>
+      <option>Choose project</option>
+      <option *ngFor="let project of projects">{{project}}</option>
+    </select>
+    <button>Submit</button>
+  </form>

@@ -1,0 +1,23 @@
+.board {
+    display: flex;
+    flex-wrap: wrap;
+
+    .newProject {
+        display: flex;
+        align-items: center;
+        background-color: #222;
+        color: beige;
+        border-radius: 20px;
+        height: 60px;
+        align-self: center;
+    }
+
+    #newProjectTitle {
+        margin: 15px;
+    }
+
+    .project {
+
+        margin: 20px;
+    }
+}
