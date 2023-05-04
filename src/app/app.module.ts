@@ -13,6 +13,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProjectsBoardComponent } from './project/projects-board/projects-board.component';
 import { ProjectTileComponent } from './project/project-tile/project-tile.component';
+import { NewProjectComponent } from './project/new-project/new-project.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProjectTileComponent } from './project/project-tile/project-tile.compon
     NavigationComponent,
     ProjectsBoardComponent,
     ProjectTileComponent,
+    NewProjectComponent,
   ],
   imports: [
     BrowserModule,

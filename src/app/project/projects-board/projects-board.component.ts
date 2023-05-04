@@ -16,5 +16,10 @@ export class ProjectsBoardComponent {
       name: 'manageMe2',
       description: 'kanban board app'
     }];
+  createNewProject: boolean = false;
+
+  onNewProjectCreated(newProject: ProjectTile) {
+    this.projects.push(newProject);
+  }
 
 }
