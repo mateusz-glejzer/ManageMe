@@ -6,8 +6,8 @@
         {{data.description}}
     </p>
     <div id="buttons">
-        <button type="button" class="button">Info</button>
-        <button type="button" class="button">Edit</button>
-        <button type="button" class="button">Delete</button>
+        <button type="button" class="button" (click)="showInfo(data.id)">Info</button>
+        <button type="button" class="button" (click)="showEdit(data.id)">Edit</button>
+        <button type="button" class="button" (click)="deleteProject(data.id)">Delete</button>
     </div>
 </div>

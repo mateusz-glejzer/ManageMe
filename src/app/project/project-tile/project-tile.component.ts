@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ProjectTile } from '../models/projectTileData';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ProjectInfoData } from '../models/projectInfoData';
 
 @Component({
   selector: 'app-project-tile',
@@ -7,9 +7,23 @@ import { ProjectTile } from '../models/projectTileData';
   styleUrls: ['./project-tile.component.scss']
 })
 export class ProjectTileComponent {
-  @Input() data!: ProjectTile;
+  @Input() data!: ProjectInfoData;
+  @Output() showInfoEvent = new EventEmitter<number>();
+  @Output() deleteProjectEvent = new EventEmitter<number>();
+  @Output() editProjectEvent = new EventEmitter<number>();
+  @Output() goToProjectEvent = new EventEmitter<number>();
 
-  onClick() {
 
+  onClick(projectId: number) {
+    this.goToProjectEvent.emit(projectId);
+  }
+  showInfo(projectId: number) {
+    this.showInfoEvent.emit(projectId);
+  }
+  showEdit(projectId: number) {
+    this.editProjectEvent.emit(projectId);
+  }
+  deleteProject(projectId: number) {
+    this.deleteProjectEvent.emit(projectId);
   }
 }

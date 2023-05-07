@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { NewProject } from './models/newProject';
 import { NewProjectForm } from './models/newProjectForrm';
-import { ProjectTile } from '../models/projectTileData';
+import { ProjectInfoData } from '../models/projectInfoData';
 
 @Component({
   selector: 'app-new-project',
@@ -14,10 +14,15 @@ export class NewProjectComponent {
     projectName: new FormControl<string>('', { nonNullable: true }),
     description: new FormControl<string>('', { nonNullable: true }),
   })
-  @Output() newProjectCreated = new EventEmitter<ProjectTile>();
+  @Output() newProjectCreated = new EventEmitter<ProjectInfoData>();
+
+  getId(): number {
+    return Math.floor(Math.random()*100);
+  }
 
   onSubmit() {
-    const newProject: ProjectTile = {
+    const newProject: ProjectInfoData = {
+      id: this.getId(),
       name: this.projectForm.value.projectName!,
       description: this.projectForm.value.description!
     };
