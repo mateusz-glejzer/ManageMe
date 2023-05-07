@@ -1,8 +1,10 @@
 <div class="board">
-    <div class="project newProject">
-        <p id="newProjectTitle">
-            Create a new project
-        </p>
-    </div>
-    <app-project-tile class="project" *ngFor="let project of projects" [data]="project"></app-project-tile>
+    <button type="button" class="project newProjectButton" (click)="createNewProject = true">
+        Create a new project
+    </button>
+    <dialog open id="newProjectDialog" *ngIf="createNewProject">
+        <app-new-project (newProjectCreated)="onNewProjectCreated($event)"></app-new-project>
+    </dialog>
+    <app-project-tile class="project" *ngFor="let project of projects" [data]="project"
+        (deleteProjectEvent)="onDeleteProjectEvent($event)"></app-project-tile>
 </div>
