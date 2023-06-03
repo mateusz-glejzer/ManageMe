@@ -14,6 +14,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProjectsBoardComponent } from './project/projects-board/projects-board.component';
 import { ProjectTileComponent } from './project/project-tile/project-tile.component';
 import { NewProjectComponent } from './project/new-project/new-project.component';
+import { FeaturesBoardComponent } from './features/features-board/features-board.component';
+import { BoardComponent } from './board/board.component';
+import { FeatureInfoComponent } from './features/feature-info/feature-info.component';
+import { FeatureTileComponent } from './features/feature-tile/feature-tile.component';
+import { NewFeatureComponent } from './features/new-feature/new-feature.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { NewProjectComponent } from './project/new-project/new-project.component
     ProjectsBoardComponent,
     ProjectTileComponent,
     NewProjectComponent,
+    FeaturesBoardComponent,
+    BoardComponent,
+    FeatureInfoComponent,
+    FeatureTileComponent,
+    NewFeatureComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,19 @@
 <div id="title">
-    title
+    {{info.name}}
 </div>
 <div id="description">
-    description
+    {{info.description}}
 </div>
 <div id="stats">
-    project stats
     <div id="timeStats">
-        <div>Involved workhours</div>
-        <div>Time to end</div>
+        <div>
+            <p class="stats">Hours spend: {{info.hoursSpent}}</p>
+        </div>
+        <div>
+            <p class="stats">More hours to spend: {{info.hoursToSpend}}</p>
+        </div>
     </div>
-    <div id="members">
-        Members
+    <div id="members" class="stats">
+        Members:
     </div>
 </div>

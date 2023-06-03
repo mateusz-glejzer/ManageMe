@@ -1,7 +1,7 @@
-import { ProjectInfoData } from "./projectInfoData";
-import { ProjectInfoStats } from "./projectInfoStats";
-
-export interface ProjectInfo{
-    info: ProjectInfoData;
-    stats: ProjectInfoStats; 
+export interface ProjectInfo {
+    id: number;
+    name: string;
+    description: string;
+    hoursSpent: number;
+    hoursToSpend: number;
 }

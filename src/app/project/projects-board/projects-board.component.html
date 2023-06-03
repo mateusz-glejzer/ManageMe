@@ -3,8 +3,13 @@
         Create a new project
     </button>
     <dialog open id="newProjectDialog" *ngIf="createNewProject">
-        <app-new-project (newProjectCreated)="onNewProjectCreated($event)"></app-new-project>
+        <app-new-project (closeNewProjectCreator) = "oncreateNewProjectClosed()" (newProjectCreated)="onNewProjectCreated($event)"></app-new-project>
     </dialog>
     <app-project-tile class="project" *ngFor="let project of projects" [data]="project"
-        (deleteProjectEvent)="onDeleteProjectEvent($event)"></app-project-tile>
+        (deleteProjectEvent)="onDeleteProjectEvent($event)" (showInfoEvent)="onShowProjectInfoEvent($event)">
+    </app-project-tile>
+    <div id="projectInfo" *ngIf="showProjectInfo">
+        <app-project-info [info]="projectShowInfo"></app-project-info>
+        <button id="closeProjectInfo" (click)="showProjectInfo = false">Close</button>
+    </div>
 </div>

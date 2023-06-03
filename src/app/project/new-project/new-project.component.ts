@@ -15,9 +15,14 @@ export class NewProjectComponent {
     description: new FormControl<string>('', { nonNullable: true }),
   })
   @Output() newProjectCreated = new EventEmitter<ProjectInfoData>();
+  @Output() closeNewProjectCreator = new EventEmitter();
 
   getId(): number {
-    return Math.floor(Math.random()*100);
+    return Math.floor(Math.random() * 100);
+  }
+
+  onClose() {
+    this.closeNewProjectCreator.emit();
   }
 
   onSubmit() {

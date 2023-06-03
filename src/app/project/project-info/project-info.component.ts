@@ -1,13 +1,5 @@
-import { Component } from '@angular/core';
-
-export interface ProjectInfo
-{
-  title:string;
-  description:string;
-  members:string[],
-  
-
-}
+import { Component, Input } from '@angular/core';
+import { ProjectInfo } from '../models/projectInfo';
 
 @Component({
   selector: 'app-project-info',
@@ -15,5 +7,7 @@ export interface ProjectInfo
   styleUrls: ['./project-info.component.scss']
 })
 export class ProjectInfoComponent {
+
+  @Input() info!: ProjectInfo;
 
 }

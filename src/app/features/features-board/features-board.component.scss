@@ -1,0 +1,17 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 4px;
+
+    .column {
+        display: grid;
+        justify-content: center;
+        color: beige;
+        background-color: #222;
+        border-radius: 4px;
+    }
+
+    #todoColumn {
+        grid-column-start: 2;
+    }
+}
