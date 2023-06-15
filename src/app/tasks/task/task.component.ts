@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Task } from 'src/app/services/task-provider.service';
 
 @Component({
   selector: 'app-task',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class TaskComponent {
 
+  @Input() info!: Task;
+  @Output() taskSelected = new EventEmitter<number>();
+
+  showTaskInfo() {
+    this.taskSelected.emit(this.info.id);
+  }
 }

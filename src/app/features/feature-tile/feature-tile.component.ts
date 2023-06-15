@@ -18,9 +18,9 @@ export type FeatureTileComponentInfo = {
 export class FeatureTileComponent {
 
   @Input() info!: FeatureTileComponentInfo;
-  @Output() featureSelected: EventEmitter<number> = new EventEmitter();
+  @Output() featureSelected = new EventEmitter<number>();
 
-  openFeature() {
+  showFeatureInfo() {
     this.featureSelected.emit(this.info.id);
   }
 

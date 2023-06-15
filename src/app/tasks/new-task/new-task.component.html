@@ -1,7 +1,6 @@
-
-<form [formGroup]="editTaskForm">
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
     <div id="nameLabel">
-        <label for="task-name">Task name:</label>
+        <label for="task-name">Feature Name:</label>
         <input id="task-name" type="text" formControlName="taskName">
     </div>
     <label for="description">Description:</label>
@@ -17,13 +16,6 @@
             </option>
         </select>
     </div>
-    <div id="stateLabel">
-        <select name="state" formControlName="state">
-            <option *ngFor="let state of states" [ngValue]="state">
-                {{ enumType[state] }}
-            </option>
-        </select>
-    </div>
-    <button class="button" (click)="onTaskEdit()">Edit Info</button>
+    <button class="button" type="submit">Create</button>
     <button class="button" (click)="onClose()">Close</button>
 </form>

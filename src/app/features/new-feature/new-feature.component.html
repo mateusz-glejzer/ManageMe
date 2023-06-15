@@ -1,4 +1,5 @@
-<form [formGroup]="featureForm" (ngSubmit)="onSubmit()">
+<p>Create new task</p>
+<form [formGroup]="featureForm" >
     <div id="nameLabel">
         <label for="feature-name">Feature Name:</label>
         <input id="feature-name" type="text" formControlName="featureName">
@@ -7,6 +8,6 @@
     <div id="descriptionLabel">
         <input id="description" type="text" formControlName="description">
     </div>
-    <button id="button" type="submit">Create</button>
-    <button id="button" (click)="onClose()">Close</button>
+    <button class="button" (click)="onSubmit()">Create</button>
+    <button class="button" (click)="onClose()">Close</button>
 </form>

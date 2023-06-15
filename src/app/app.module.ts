@@ -19,6 +19,7 @@ import { BoardComponent } from './board/board.component';
 import { FeatureInfoComponent } from './features/feature-info/feature-info.component';
 import { FeatureTileComponent } from './features/feature-tile/feature-tile.component';
 import { NewFeatureComponent } from './features/new-feature/new-feature.component';
+import { NewTaskComponent } from './tasks/new-task/new-task.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { NewFeatureComponent } from './features/new-feature/new-feature.componen
     FeatureInfoComponent,
     FeatureTileComponent,
     NewFeatureComponent,
+    NewTaskComponent,
   ],
   imports: [
     BrowserModule,
