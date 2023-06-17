@@ -1,0 +1,21 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div id="nameLabel">
+        <label for="task-name">Feature Name:</label>
+        <input id="task-name" type="text" formControlName="taskName">
+    </div>
+    <label for="description">Description:</label>
+    <div id="descriptionLabel">
+        <input id="description" type="text" formControlName="description">
+    </div>
+    <label for="feature">Feature:</label>
+    <div id="featureLabel">
+        <select id="feature" type="text" formControlName="feature">
+            <option value="">Choose feature</option>
+            <option *ngFor="let feature of features" [ngValue]="feature">
+                {{ feature.name }}
+            </option>
+        </select>
+    </div>
+    <button class="button" type="submit">Create</button>
+    <button class="button" (click)="onClose()">Close</button>
+</form>

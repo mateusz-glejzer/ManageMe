@@ -1,1 +1,29 @@
-<p>task-info works!</p>
+
+<form [formGroup]="editTaskForm">
+    <div id="nameLabel">
+        <label for="task-name">Task name:</label>
+        <input id="task-name" type="text" formControlName="taskName">
+    </div>
+    <label for="description">Description:</label>
+    <div id="descriptionLabel">
+        <input id="description" type="text" formControlName="description">
+    </div>
+    <label for="feature">Feature:</label>
+    <div id="featureLabel">
+        <select id="feature" type="text" formControlName="feature">
+            <option value="">Choose feature</option>
+            <option *ngFor="let feature of features" [ngValue]="feature">
+                {{ feature.name }}
+            </option>
+        </select>
+    </div>
+    <div id="stateLabel">
+        <select name="state" formControlName="state">
+            <option *ngFor="let state of states" [ngValue]="state">
+                {{ enumType[state] }}
+            </option>
+        </select>
+    </div>
+    <button class="button" (click)="onTaskEdit()">Edit Info</button>
+    <button class="button" (click)="onClose()">Close</button>
+</form>

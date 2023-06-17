@@ -1,0 +1,13 @@
+<p>Create new task</p>
+<form [formGroup]="featureForm" >
+    <div id="nameLabel">
+        <label for="feature-name">Feature Name:</label>
+        <input id="feature-name" type="text" formControlName="featureName">
+    </div>
+    <label for="description">Description:</label>
+    <div id="descriptionLabel">
+        <input id="description" type="text" formControlName="description">
+    </div>
+    <button class="button" (click)="onSubmit()">Create</button>
+    <button class="button" (click)="onClose()">Close</button>
+</form>

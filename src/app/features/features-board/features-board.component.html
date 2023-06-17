@@ -1,0 +1,26 @@
+<div class="column" id="todoColumn">
+    <div class="columnTittle">todo</div>
+    <button id="createFeatureTile" (click)="toogleShowCreateNewFeature()">Create new</button>
+    <li *ngFor="let item of todoItems">
+        <app-feature-tile (featureSelected)="showFeatureInfo($event)" [info]="item" />
+    </li>
+</div>
+<div class="column" id="doingColumn">
+    <div class="columnTittle">doing</div>
+    <li *ngFor="let item of doingItems">
+        <app-feature-tile (featureSelected)="showFeatureInfo($event)" [info]="item" />
+    </li>
+</div>
+<div class="column" id="doneColumn">
+    <div class="columnTittle">done</div>
+    <div *ngFor="let item of doneItems">
+        <app-feature-tile (featureSelected)="showFeatureInfo($event)" [info]="item" />
+    </div>
+</div>
+<div class="dialog" *ngIf="showInfo">
+    <app-feature-info (closeFeatureInfo)="showInfo = false" [featureId]="selectedFeature!"></app-feature-info>
+</div>
+<div class="dialog" *ngIf="craeteNewFeature === true">
+    <app-new-feature (newFeatureCreated)="newFeatureAdded($event)"
+        (closeNewFeatureCreator)="toogleShowCreateNewFeature()"></app-new-feature>
+</div>

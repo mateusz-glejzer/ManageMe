@@ -1,0 +1,23 @@
+<p>Feature info</p>
+<form [formGroup]="editFeatureForm">
+    <div id="nameLabel">
+        <label for="feature-name">Feature name:</label>
+        <input id="feature-name" type="text" formControlName="featureName">
+    </div>
+    <label for="description">Description:</label>
+    <div id="descriptionLabel">
+        <input id="description" type="text" formControlName="description">
+    </div>
+    <div id="stateLabel">
+        <select name="state" formControlName="state">
+            <option *ngFor="let state of states" [ngValue]="state">
+                {{ enumType[state] }}
+            </option>
+        </select>
+    </div>
+    <button class="button" (click)="onSubmit()">Edit Info</button>
+    <button class="button" (click)="onClose()">Close</button>
+</form>
+<ul *ngFor="let task of featureInfo?.tasks">
+    <li>{{task}}</li>
+</ul>
